@@ -1,0 +1,48 @@
+---
+import type { BrandAsset } from '../types';
+
+const assets: BrandAsset[] = [
+  {
+    name: 'Logo (Dark)',
+    description: 'SVG format, dark version',
+    downloadUrl: '/assets/logo-dark.svg'
+  },
+  {
+    name: 'Logo (Light)',
+    description: 'SVG format, light version',
+    downloadUrl: '/assets/logo-light.svg'
+  },
+  {
+    name: 'Brand Guidelines',
+    description: 'PDF document',
+    downloadUrl: '/assets/brand-guidelines.pdf'
+  }
+];
+---
+<section class="py-24 bg-gray-50 dark:bg-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-primary dark:text-primary-dark text-center sm:text-4xl">
+      Brand Assets
+    </h2>
+    <p class="mt-4 text-lg text-center text-secondary dark:text-secondary-dark">
+      Download official Event Destinations logos and brand assets
+    </p>
+    <div class="mt-16 grid gap-8 md:grid-cols-3">
+      {assets.map(asset => (
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-2 text-primary dark:text-primary-dark">{asset.name}</h3>
+          <p class="text-secondary dark:text-secondary-dark mb-4">{asset.description}</p>
+          <a 
+            href={asset.downloadUrl}
+            class="inline-flex items-center text-accent dark:text-accent-dark hover:text-accent/80 dark:hover:text-accent-dark/80"
+          >
+            Download
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

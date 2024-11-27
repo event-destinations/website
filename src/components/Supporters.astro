@@ -1,0 +1,43 @@
+---
+import type { Supporter } from '../types';
+
+const supporters: Supporter[] = [
+  {
+    name: 'Supporter 1',
+    role: 'Tech Lead',
+    company: 'Company 1',
+    image: '/supporters/supporter1.svg',
+    quote: 'Event Destinations has transformed how we handle our event routing.'
+  },
+  {
+    name: 'Supporter 2',
+    role: 'CTO',
+    company: 'Company 2',
+    image: '/supporters/supporter2.svg',
+    quote: 'The standardization brought by Event Destinations is game-changing.'
+  }
+];
+---
+<section class="py-24 bg-white dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-primary dark:text-primary-dark text-center sm:text-4xl">
+      Supported By Industry Leaders
+    </h2>
+    <div class="mt-16 grid gap-8 lg:grid-cols-2">
+      {supporters.map(supporter => (
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
+          <blockquote>
+            <p class="text-lg text-gray-600 dark:text-gray-300">"{supporter.quote}"</p>
+          </blockquote>
+          <div class="mt-4 flex items-center">
+            <img class="h-12 w-12 rounded-full" src={supporter.image} alt={supporter.name} />
+            <div class="ml-4">
+              <div class="text-base font-medium text-gray-900 dark:text-gray-100">{supporter.name}</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">{supporter.role}, {supporter.company}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

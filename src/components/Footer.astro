@@ -1,0 +1,25 @@
+---
+import GitHub from './GitHub.astro';
+const currentYear = new Date().getFullYear();
+---
+<footer class="bg-primary dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="flex-shrink-0 mb-4 md:mb-0">
+        <a href="/" class="flex items-center">
+          <span class="text-xl font-bold text-white">Event Destinations</span>
+        </a>
+      </div>
+      <div class="flex items-center space-x-8">
+        <a href="#manifesto" class="text-gray-400 hover:text-white">Manifesto</a>
+        <a href="#adopters" class="text-gray-400 hover:text-white">Adopters</a>
+        <GitHub />
+      </div>
+    </div>
+    <div class="mt-4 pt-4 border-t border-gray-800">
+      <p class="text-center text-gray-400">
+        © {currentYear} Event Destinations. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
