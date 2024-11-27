@@ -1,35 +1,43 @@
 ---
-import type { Adopter } from '../types';
+import type { Adopter } from "../types";
 
 const adopters: Adopter[] = [
   {
-    name: 'Example Tech 1',
-    logo: '/logos/example1.svg',
-    url: 'https://example1.com'
+    name: "Example Tech 1",
+    logo: "/logos/example1.svg",
+    url: "https://example1.com",
   },
   {
-    name: 'Example Tech 2',
-    logo: '/logos/example2.svg',
-    url: 'https://example2.com'
-  }
+    name: "Example Tech 2",
+    logo: "/logos/example2.svg",
+    url: "https://example2.com",
+  },
 ];
 ---
+
 <section id="adopters" class="py-24 bg-gray-50 dark:bg-gray-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
-      <h2 class="text-3xl font-extrabold text-primary dark:text-primary-dark sm:text-4xl">
+      <h2
+        class="text-3xl font-extrabold text-primary dark:text-primary-dark sm:text-4xl"
+      >
         Who's Using Event Destinations?
       </h2>
       <p class="mt-4 text-lg text-secondary dark:text-secondary-dark">
-        Leading technologies that have adopted the Event Destinations specification
+        Leading technologies that have adopted the Event Destinations manifesto
       </p>
     </div>
     <div class="mt-16 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
-      {adopters.map(adopter => (
-        <a href={adopter.url} class="flex justify-center items-center grayscale hover:grayscale-0 transition-all">
-          <img src={adopter.logo} alt={adopter.name} class="h-12" />
-        </a>
-      ))}
+      {
+        adopters.map((adopter) => (
+          <a
+            href={adopter.url}
+            class="flex justify-center items-center grayscale hover:grayscale-0 transition-all"
+          >
+            <img src={adopter.logo} alt={adopter.name} class="h-12" />
+          </a>
+        ))
+      }
     </div>
   </div>
 </section>
